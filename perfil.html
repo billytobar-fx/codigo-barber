@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código Barber | Mi Perfil - Configuración</title>
+
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/variables.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+
+    <aside class="sidebar-panel">
+      <div class="sidebar-panel__header">
+        <a href="/dashboard.html" class="logo-box">
+          <img src="/images/Logo/logo.png" alt="Código Barber Logo" class="logo-box__img" />
+          <div class="logo-box__text">
+            <span class="brand-title">CÓDIGO BARBER</span>
+            <span class="brand-subtitle">HOUSE</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-panel__menu">
+        <a href="/dashboard.html" class="menu-item">
+          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+          Inicio
+        </a>
+        <a href="/reservas.html" class="menu-item">
+          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Reservas
+        </a>
+        <a href="/perfil.html" class="menu-item active">
+          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Mi perfil
+        </a>
+      </nav>
+
+      <div class="sidebar-panel__footer">
+        <button id="btnLogout" class="btn-logout-panel">
+          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          Cerrar sesión
+        </button>
+      </div>
+    </aside>
+
+    
+    <main class="dashboard-main-area">
+
+      <header class="page-top-bar">
+        <div>
+          <h1 class="page-title">Mi perfil / Configuración</h1>
+          <p class="page-subtitle">Administra barberos, servicios y horarios.</p>
+        </div>
+      </header>
+
+      
+      <div class="header-barberos-nav">
+        <nav class="tabs-bar nav-tabs" aria-label="Configuración del perfil">
+          <button class="tab-item active" data-tab="barberos">Barberos</button>
+          <button class="tab-item" data-tab="servicios">Servicios</button>
+          <button class="tab-item" data-tab="horarios">Horarios</button>
+        </nav>
+        <button type="button" class="btn-yellow-outline" id="btnAgregar">
+          <span class="plus-icon">+</span>
+          <span id="btnAgregarTexto">Agregar barbero</span>
+        </button>
+      </div>
+
+      
+      <div class="tab-content active" id="tab-barberos">
+        <section class="panel-card">
+          <div class="table-container">
+            <table class="dark-table profile-table">
+              <thead>
+                <tr>
+                  <th>NOMBRE</th>
+                  <th>ESPECIALIDAD</th>
+                  <th style="text-align: right;">ACCIONES</th>
+                </tr>
+              </thead>
+              <tbody id="barberosTableBody">
+                <tr><td colspan="3" class="table-empty">Cargando barberos desde Supabase...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <span id="barberosCounter">Cargando...</span>
+          </div>
+        </section>
+      </div>
+
+      
+      <div class="tab-content" id="tab-servicios">
+        <section class="panel-card">
+          <div class="table-container">
+            <table class="dark-table profile-table">
+              <thead>
+                <tr>
+                  <th>NOMBRE DEL SERVICIO</th>
+                  <th>DURACIÓN ESTIMADA</th>
+                  <th>PRECIO</th>
+                  <th style="text-align: right;">ACCIONES</th>
+                </tr>
+              </thead>
+              <tbody id="serviciosTableBody">
+                <tr><td colspan="4" class="table-empty">Cargando servicios desde Supabase...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <span id="serviciosCounter">Cargando...</span>
+          </div>
+        </section>
+      </div>
+
+      
+      <div class="tab-content" id="tab-horarios">
+        <section class="panel-card">
+          <div class="schedule-settings">
+            <h3 style="color: #c5a059; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">HORARIO</h3>
+
+            <div class="schedule-row" style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #222;">
+              <span>Lunes – Viernes:</span>
+              <strong id="horarioSemana" style="color: #aaa;">9:00 – 19:00</strong>
+            </div>
+
+            <div class="schedule-row" style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #222;">
+              <span>Sábado:</span>
+              <strong id="horarioSabado" style="color: #aaa;">9:00 – 19:00</strong>
+            </div>
+
+            <div class="schedule-row" style="display: flex; justify-content: space-between; padding: 0.75rem 0;">
+              <span>Domingo:</span>
+              <strong id="horarioDomingo" style="color: #aaa;">10:00 – 15:00</strong>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="mobile-logout-footer">
+        <button type="button" class="mobile-logout-button">
+          <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+
+    </main>
+
+  </div>
+
+  
+  <div id="modalForm" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Formulario</h3>
+        <button type="button" id="btnCloseModal" class="btn-close">&times;</button>
+      </div>
+      <form id="crudForm">
+        <input type="hidden" id="itemId">
+
+        <div class="form-group">
+          <label for="inputNombre">Nombre</label>
+          <input type="text" id="inputNombre" class="filter-input" required placeholder="Ingresa el nombre">
+        </div>
+
+        <div class="form-group" id="groupEspecialidad">
+          <label for="inputEspecialidad">Especialidad</label>
+          <input type="text" id="inputEspecialidad" class="filter-input" placeholder="Ej. Fade y Barba">
+        </div>
+
+        <div class="form-group" id="groupDuracion" style="display: none;">
+          <label for="inputDuracion">Duración Estimada</label>
+          <input type="text" id="inputDuracion" class="filter-input" placeholder="Ej. 30 MIN">
+        </div>
+
+        <div class="form-group" id="groupPrecio" style="display: none;">
+          <label for="inputPrecio">Precio</label>
+          <input type="text" id="inputPrecio" class="filter-input" placeholder="Ej. $20.000">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="btnCancelModal" class="btn-box-action" style="width: auto; padding: 0 1rem;">Cancelar</button>
+          <button type="submit" class="btn-action-gold">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <div id="modalHorarios" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Editar Horarios de Atención</h3>
+        <button type="button" id="btnCloseModalHorarios" class="btn-close">&times;</button>
+      </div>
+      <form id="horariosForm">
+        <div class="form-group">
+          <label for="inputHorarioSemana">Lunes – Viernes</label>
+          <input type="text" id="inputHorarioSemana" class="filter-input" required placeholder="Ej. 9:00 – 19:00">
+        </div>
+
+        <div class="form-group">
+          <label for="inputHorarioSabado">Sábado</label>
+          <input type="text" id="inputHorarioSabado" class="filter-input" required placeholder="Ej. 9:00 – 19:00">
+        </div>
+
+        <div class="form-group">
+          <label for="inputHorarioDomingo">Domingo</label>
+          <input type="text" id="inputHorarioDomingo" class="filter-input" required placeholder="Ej. 10:00 – 15:00">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="btnCancelHorarios" class="btn-box-action" style="width: auto; padding: 0 1rem;">Cancelar</button>
+          <button type="submit" class="btn-action-gold">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/perfil.js"></script>
+</body>
+
+</html>

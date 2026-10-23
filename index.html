@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Código Barber — Barbería profesional en Bello. Reserva tu cita en línea.">
+  <title>Código Barber | Barbería</title>
+
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/variables.css">
+  <link rel="stylesheet" href="/src/css/booking.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container header__content">
+
+      <a href="#inicio" class="logo">
+        <img src="/images/Logo/logo.png" alt="Código Barber Logo" class="logo__img" />
+        <span class="logo__text">
+          <strong>CÓDIGO BARBER</strong>
+          <small>HOUSE</small>
+        </span>
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <nav
+        class="nav"
+        id="mainNav"
+      >
+
+        <a href="#servicios">
+          Servicios
+        </a>
+
+        <a href="#barberos">
+          Barberos
+        </a>
+
+        <a href="#galeria">
+          Galería
+        </a>
+
+        <a href="#reservar">
+          Reservar
+        </a>
+
+        <a href="#contacto">
+          Contacto
+        </a>
+
+      </nav>
+
+
+      <a
+        href="#reservar"
+        class="button button--gold header__button"
+      >
+        RESERVAR CITA
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+      <div class="hero__overlay"></div>
+
+
+      <div class="container hero__content">
+
+        <p class="eyebrow">
+          EST. 2026 — BELLO, COLOMBIA
+        </p>
+
+
+        <h1>
+
+          El Arte
+
+          <span>
+            del Buen
+          </span>
+
+          Corte
+
+        </h1>
+
+
+        <p class="hero__description">
+          Barbería de alto nivel. Reserva tu cita en línea y disfruta una experiencia
+          diseñada para quienes exigen un buen corte.
+        </p>
+
+
+        <div class="hero__buttons">
+
+          <a
+            href="#reservar"
+            class="button button--gold"
+          >
+            RESERVAR AHORA
+          </a>
+
+
+          <a
+            href="#servicios"
+            class="button button--outline"
+          >
+            VER SERVICIOS
+          </a>
+
+        </div>
+
+
+        <div class="hero__stats">
+
+          <div>
+
+            <strong>
+              8+
+            </strong>
+
+            <span>
+              Años de experiencia
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              2,400+
+            </strong>
+
+            <span>
+              Clientes felices
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              3
+            </strong>
+
+            <span>
+              Barberos
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="section"
+      id="servicios"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              LO QUE OFRECEMOS
+            </p>
+
+            <h2>
+
+              Nuestros
+
+              <span>
+                Servicios
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Cada servicio incluye consulta personalizada
+            y productos de alta calidad.
+
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/corte-clasico.jpg"
+                alt="Corte Clásico"
+              />
+
+              <span>
+                Corte Clásico
+              </span>
+
+              <span class="service-time">
+                30 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Corte Clásico
+                </h3>
+
+                <strong>
+                  $20.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Corte personalizado adaptado a tu estilo y tipo de cabello
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="corte-clasico">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/degradado-fade.jpg"
+                alt="Degradado / Fade"
+              />
+
+              <span>
+                Degradado / Fade
+              </span>
+
+              <span class="service-time">
+                40 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Degradado / Fade
+                </h3>
+
+                <strong>
+                  $23.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Degradado profesional con acabado limpio y preciso
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="degradado-fade">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/arreglo-barba.jpg"
+                alt="Arreglo de Barba"
+              />
+
+              <span>
+                Arreglo de barba
+              </span>
+
+              <span class="service-time">
+                25 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Arreglo de barba
+                </h3>
+
+                <strong>
+                  $15.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Perfilado, relleno y acondicionamiento de la barba
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="arreglo-barba">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/corte-barba.jpg"
+                alt="Corte + Barba"
+              />
+
+              <span>
+                Corte + Barba
+              </span>
+
+              <span class="service-time">
+                60 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Corte + Barba
+                </h3>
+
+                <strong>
+                  $30.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                El paquete completo para lucir impecable de cabeza a barba
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="corte-barba">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/diseño-dibujos.jpg"
+                alt="Diseño y Dibujos"
+              />
+
+              <span>
+                Diseño y dibujos
+              </span>
+
+              <span class="service-time">
+                45 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Diseños y dibujos
+                </h3>
+
+                <strong>
+                  $25.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Diseños artísticos y detalles únicos en tu corte
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="diseno-dibujos">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-card__image">
+
+              <img
+                src="/images/servicios/perfilado-cejas.jpg"
+                alt="Perfilado de Cejas"
+              />
+
+              <span>
+                Perfilado de cejas
+              </span>
+
+              <span class="service-time">
+                15 MIN
+              </span>
+
+            </div>
+
+
+            <div class="service-card__content">
+
+              <div>
+
+                <h3>
+                  Perfilado de cejas
+                </h3>
+
+                <strong>
+                  $8.000
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Definición de cejas para un look perfecto
+
+              </p>
+
+
+              <button class="button button--gold service-card__btn" data-service-id="perfilado-cejas">
+                RESERVAR ESTE SERVICIO
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="section section--dark"
+      id="barberos"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading section-heading--center">
+
+          <div>
+
+            <p class="eyebrow">
+              EL EQUIPO
+            </p>
+
+            <h2>
+
+              Nuestros
+
+              <span>
+                Barberos
+              </span>
+
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="barbers-grid">
+
+          <article class="barber-card">
+
+            <h3>Carlos Medina</h3>
+
+            <div class="barber-card__photo">
+              <img
+                src="/images/barberos/carlos-medina.jpg"
+                alt="Carlos Medina"
+              />
+            </div>
+
+            <span class="experience">
+              5 AÑOS
+            </span>
+
+            <p class="barber-specialty">
+              Diseños y arte capilar
+            </p>
+
+            <p>
+              Artista del cabello especializado en diseños creativos y únicos
+            </p>
+
+            <button class="button button--outline barber-card__btn" data-barber-id="carlos-medina">
+              RESERVAR CON CARLOS
+            </button>
+
+          </article>
+
+
+          <article class="barber-card">
+
+            <h3>Andres Rojas</h3>
+
+            <div class="barber-card__photo">
+              <img
+                src="/images/barberos/andres-rojas.jpg"
+                alt="Andres Rojas"
+              />
+            </div>
+
+            <span class="experience">
+              7 AÑOS
+            </span>
+
+            <p class="barber-specialty">
+              Barbas y Afeitados clasicos
+            </p>
+
+            <p>
+              Maestro del afeitado clasico y el cuidado de barba tradicional
+            </p>
+
+            <button class="button button--outline barber-card__btn" data-barber-id="andres-rojas">
+              RESERVAR CON ANDRES
+            </button>
+
+          </article>
+
+          <article class="barber-card">
+
+            <h3>Camilo Vargas</h3>
+
+            <div class="barber-card__photo">
+              <img
+                src="/images/barberos/camilo-vargas.jpg"
+                alt="Camilo Vargas"
+              />
+            </div>
+
+            <span class="experience">
+              2 AÑOS
+            </span>
+
+            <p class="barber-specialty">
+              Cortez Clasicos y degradados
+            </p>
+
+            <p>
+              Especialista en cortes tradicionales y degradados modernos
+            </p>
+
+            <button class="button button--outline barber-card__btn" data-barber-id="camilo-vargas">
+              RESERVAR CON CAMILO
+            </button>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="section gallery"
+      id="galeria"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              NUESTRO TRABAJO
+            </p>
+
+            <h2>
+
+              Galería de
+
+              <span>
+                Trabajos
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Resultados reales de nuestros clientes.
+            Próximamente agregaremos fotografías
+            profesionales de Código Barber.
+
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <span>Corte degradado</span>
+            <img src="/images/galeria/corte-degradado.jpg" alt="Corte degradado" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Diseño artístico</span>
+            <img src="/images/galeria/diseño-artistico.jpg" alt="Diseño artístico" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Barba perfilada</span>
+            <img src="/images/galeria/barba-perfilada.jpg" alt="Barba perfilada" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Fade alto</span>
+            <img src="/images/galeria/fade-alto.jpg" alt="Fade alto" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Peinado clásico</span>
+            <img src="/images/galeria/peinado-clasico.jpg" alt="Peinado clásico" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Fade bajo</span>
+            <img src="/images/galeria/fade-bajo.jpg" alt="Fade bajo" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Peinado desordenado</span>
+            <img src="/images/galeria/peinado-desordenado.jpg" alt="Peinado desordenado" />
+          </div>
+
+          <div class="gallery-item">
+            <span>Fade con textura</span>
+            <img src="/images/galeria/fade-con-textura.jpg" alt="Fade con textura" />
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="booking-section section" id="reservar">
+      <div class="container booking-container">
+        
+        <p class="eyebrow">AGENDA TU TURNO</p>
+        <h2>Reservar <span>Cita</span></h2>
+
+        <div class="booking-steps-indicator" id="bookingStepsIndicator">
+          <div class="step-num active" data-step="1">1</div>
+          <div class="step-num" data-step="2">2</div>
+          <div class="step-num" data-step="3">3</div>
+        </div>
+
+        <div class="booking-step active" id="step1">
+          <h3 class="step-title">1. Elige tu servicio y barbero</h3>
+
+          <h4 class="sub-title">SERVICIO</h4>
+          <div class="options-grid services-options" id="servicesOptions">
+            <div class="option-card active" data-id="corte-clasico" data-name="Corte Clasico" data-price="$20.000">
+              <div class="option-title">Corte Clasico</div>
+              <div class="option-sub">30 MIN</div>
+            </div>
+            <div class="option-card" data-id="degradado-fade" data-name="Degradado/Fade" data-price="$23.000">
+              <div class="option-title">Degradado/Fade</div>
+              <div class="option-sub">40 MIN <span class="price">$23.000</span></div>
+            </div>
+            <div class="option-card" data-id="arreglo-barba" data-name="Arreglo de Barba" data-price="$15.000">
+              <div class="option-title">Arreglo de Barba</div>
+              <div class="option-sub">25 MIN <span class="price">$15.000</span></div>
+            </div>
+            <div class="option-card" data-id="corte-barba" data-name="Corte + Barba" data-price="$30.000">
+              <div class="option-title">Corte + Barba</div>
+              <div class="option-sub">60 MIN <span class="price">$30.000</span></div>
+            </div>
+            <div class="option-card" data-id="diseno-dibujos" data-name="Diseños y Dibujos" data-price="$25.000">
+              <div class="option-title">Diseños y Dibujos</div>
+              <div class="option-sub">45 MIN <span class="price">$25.000</span></div>
+            </div>
+            <div class="option-card" data-id="perfilado-cejas" data-name="Perfilado de Cejas" data-price="$8.000">
+              <div class="option-title">Perfilado de Cejas</div>
+              <div class="option-sub">15 MIN <span class="price">$8.000</span></div>
+            </div>
+          </div>
+
+          <h4 class="sub-title">BARBERO</h4>
+          <div class="options-grid barbers-options" id="barbersOptions">
+            <div class="option-card" data-id="carlos-medina" data-name="Carlos Medina">
+              <div class="option-title">Carlos Medina</div>
+              <div class="option-sub">5 años</div>
+            </div>
+            <div class="option-card" data-id="andres-rojas" data-name="Andres Rojas">
+              <div class="option-title">Andres Rojas</div>
+              <div class="option-sub">7 años</div>
+            </div>
+            <div class="option-card active" data-id="camilo-vargas" data-name="Camilo Vargas">
+              <div class="option-title">Camilo Vargas</div>
+              <div class="option-sub">2 años</div>
+            </div>
+          </div>
+
+          <button class="button button--gold full-width-btn" id="btnToStep2">
+            SIGUIENTE: FECHA Y HORA &rarr;
+          </button>
+        </div>
+
+        <div class="booking-step" id="step2">
+          <h3 class="step-title">2. Fecha y Hora</h3>
+
+          <h4 class="sub-title">FECHA</h4>
+          <input type="date" class="date-picker-input" id="bookingDate">
+
+          <h4 class="sub-title" id="barberAvailableTitle">HORARIO DISPONIBLE - CAMILO VARGAS</h4>
+          <div class="time-slots-grid" id="timeSlotsGrid">
+            <div class="time-slot">09:00</div>
+            <div class="time-slot">09:30</div>
+            <div class="time-slot">10:00</div>
+            <div class="time-slot">10:30</div>
+            <div class="time-slot">11:00</div>
+            <div class="time-slot">11:30</div>
+            <div class="time-slot">14:30</div>
+            <div class="time-slot">15:00</div>
+            <div class="time-slot">15:30</div>
+            <div class="time-slot">16:00</div>
+            <div class="time-slot">16:30</div>
+            <div class="time-slot">17:00</div>
+            <div class="time-slot">17:30</div>
+            <div class="time-slot">18:00</div>
+          </div>
+
+          <div class="step-buttons-row">
+            <button class="button button--outline" id="btnBackToStep1">&larr; ATRAS</button>
+            <button class="button button--gold" id="btnToStep3">SIGUIENTE: TUS DATOS &rarr;</button>
+          </div>
+        </div>
+
+        <div class="booking-step" id="step3">
+          <h3 class="step-title">3. Tus datos de contacto</h3>
+
+          <h4 class="sub-title">RESUMEN DE TU RESERVA</h4>
+          <div class="summary-card">
+            <div class="summary-col">
+              <span class="label">servicio</span>
+              <strong id="summaryService">Corte clasico</strong>
+            </div>
+            <div class="summary-col">
+              <span class="label">Barbero</span>
+              <strong id="summaryBarber">Camilo Vargas</strong>
+            </div>
+            <div class="summary-col">
+              <span class="label">Fecha</span>
+              <strong id="summaryDate">2026-01-09</strong>
+            </div>
+            <div class="summary-col">
+              <span class="label">Hora</span>
+              <strong id="summaryTime">10:00</strong>
+            </div>
+          </div>
+
+          <h4 class="sub-title">NOMBRE Y APELLIDO</h4>
+          <input type="text" class="booking-input" id="clientName" placeholder="Felipe Perez">
+
+          <h4 class="sub-title">TELEFONO</h4>
+          <input type="tel" class="booking-input" id="clientPhone" name="telefono" placeholder="3108244137" inputmode="numeric" maxlength="10" pattern="3[0-9]{9}" autocomplete="tel" required>
+
+          <div class="step-buttons-row">
+            <button class="button button--outline" id="btnBackToStep2">&larr; ATRAS</button>
+            <button class="button button--gold" id="btnConfirmBooking">CONFIRMAR RESERVA&rarr;</button>
+          </div>
+        </div>
+
+        <div class="booking-step" id="step4">
+          <div class="confirmation-box">
+            <div class="check-badge">&#10003;</div>
+            <h3 class="confirm-title">&iexcl;Cita confirmada!</h3>
+            <p class="confirm-details" id="confirmDetails">
+              Felipe Perez - Corte Clasico - Camilo Vargas
+            </p>
+            <p class="confirm-date" id="confirmDateTime">
+              2026-01-09 a las 10:00
+            </p>
+
+            <div class="step-buttons-row center-row">
+              <button class="button button--gold" id="btnWhatsapp">ENVIAR POR WHATSAPP</button>
+              <button class="button button--outline" id="btnNewBooking">NUEVA RESERVA</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="consultar-reserva">
+      <div class="container">
+        <div class="consultar-reserva-box">
+          <h2>¿Necesitas cancelar una reserva?</h2>
+          <p>Ingresa el teléfono usado al reservar para consultar tus citas pendientes.</p>
+          <p class="booking-cancel-notice">La cancelación se verifica únicamente con el número de teléfono.</p>
+          <form id="formBuscarReserva" class="consultar-reserva-form">
+            <label for="inputBuscarTelefono">Teléfono de la reserva</label>
+            <input
+              type="tel"
+              id="inputBuscarTelefono"
+              class="filter-input"
+              autocomplete="tel"
+              required
+              placeholder="Ej. 3108244137"
+            >
+            <button type="submit" id="btnBuscarReserva" class="button button--gold">Buscar cita</button>
+          </form>
+          <div id="resultadoCitaCliente" class="booking-cancel-results" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      class="section contact"
+      id="contacto"
+    >
+
+      <div class="container">
+
+
+        <p class="eyebrow">
+          ENCUÉNTRANOS
+        </p>
+
+
+        <h2>
+
+          Contacto &
+
+          <span>
+            Ubicación
+          </span>
+
+        </h2>
+
+
+        <div class="contact-grid">
+
+
+          <div class="contact-info">
+
+
+            <div>
+
+              <strong>
+                📍 DIRECCIÓN
+              </strong>
+
+              <p>
+                Bello, Antioquia, Colombia
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                📱 TELÉFONO / WHATSAPP
+              </strong>
+
+              <p>
+                +57 310 824 4137
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                🕐 HORARIO DE ATENCIÓN
+              </strong>
+
+              <p>
+
+                Lunes – Viernes:
+                9:00 AM – 7:00 PM
+
+                <br>
+
+                Sábado:
+                9:00 AM – 7:00 PM
+
+                <br>
+
+                Domingo:
+                10:00 AM – 3:00 PM
+
+              </p>
+
+            </div>
+
+            <div>
+              <strong>SIGUENOS</strong>
+              <div class="social-links">
+                <a href="https://www.facebook.com/share/1FUVp5mWsA/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" class="social-icon social-icon--facebook"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@melos822?_r=1&_t=ZS-99ojp9lrBMj" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" class="social-icon social-icon--tiktok"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-1.42V8.96a7.29 7.29 0 1 0 6.34 7.21V9.26a8.28 8.28 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-0.69z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/billy_t17?stkn=N3Q1d25jbXNtaWkx" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" class="social-icon social-icon--instagram"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="map-placeholder">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.456621130668!2d-75.5608262252352!3d6.3348463936548125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442fa6957c4f33%3A0x237edb90f0e5df1a!2sParque%20Principal%20de%20Bello%2C%20Prado%2C%20Bello%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1789679996712!5m2!1ses-419!2sco" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer__content">
+
+
+      <div>
+
+        <a href="#inicio" class="logo-footer">
+          <img src="/images/Logo/logo.png" alt="Código Barber Logo" class="logo__img" />
+          <span class="logo__text">
+            <strong>CÓDIGO BARBER</strong>
+          </span>
+        </a>
+
+        <p class="footer__desc">
+          Barbería profesional en Bello.
+          Estilo, precisión y experiencia.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          NAVEGACIÓN
+        </strong>
+
+        <a href="#servicios">
+          Servicios
+        </a>
+
+        <a href="#barberos">
+          Barberos
+        </a>
+
+        <a href="#galeria">
+          Galería
+        </a>
+
+        <a href="#reservar">
+          Reservar
+        </a>
+
+        <a href="#contacto">
+          Contacto
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          HORARIO
+        </strong>
+
+        <p>
+          Lunes – Viernes: 9:00 – 19:00
+        </p>
+
+        <p>
+          Sábado: 9:00 – 19:00
+        </p>
+
+        <p>
+          Domingo: 10:00 – 15:00
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer__bottom">
+      <span>© 2026 Código Barber. Todos los derechos reservados.</span>
+      <a href="/login.html" class="admin-access-link">Acceso Personal</a>
+    </div>
+
+  </footer>
+
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>

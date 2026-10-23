@@ -1,0 +1,45 @@
+:root {
+  
+
+  --black: #070707;
+  --black-soft: #0d0d0d;
+  --black-card: #121212;
+
+  --gold: #d4af52;
+  --gold-light: #e4c66d;
+
+  --white: #f4f0e7;
+  --white-soft: #d9d4ca;
+
+  --gray: #88827a;
+  --gray-dark: #55514b;
+
+  --border: rgba(255, 255, 255, 0.09);
+
+
+ 
+  
+
+  --font-display:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  --font-body:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+
+  
+
+  --container: 1180px;
+
+  --header-height: 72px;
+
+
+ 
+
+  --transition:
+    0.3s ease;
+}
