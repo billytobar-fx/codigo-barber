@@ -1,97 +1,98 @@
 # Código Barber
 
-Código Barber es una pagina web para consultar servicios, perfiles de barberos y gestionar reservas de citas en una barbería esta version combina una interfaz pública de atención al cliente con un panel administrativo restringido para la gestión de citas y catalogación de servicios y barberos
+Código Barber es una aplicación web para consultar servicios, perfiles de barberos y reservar citas en una barbería. La solución combina una interfaz pública para clientes con un panel administrativo para gestionar citas, servicios y barberos. La aplicación está desplegada en Vercel y usa Supabase para autenticación y almacenamiento de datos.
 
 URL pública: https://codigo-barber.vercel.app/
 
-## A. Nombre del proyecto
+## 1. Descripción del proyecto
 
-Código Barber es una solución frontend orientada a la reserva de turnos para una barbería su objetivo es permitir a los clientes revisar servicios, revisar perfiles del equipo y programar citas en línea, mientras el personal autorizado puede gestionar la agenda desde un panel privado
+La app está orientada a resolver la necesidad de una barbería de permitir reservas en línea, mostrar su catálogo y mantener una gestión ordenada de las citas. El proyecto está pensado tanto para clientes como para el personal autorizado.
 
-## B. Descripción general
+### Público objetivo
+- Clientes que desean consultar servicios y reservar una cita.
+- Dueño o personal administrativo que gestiona citas y catálogo del negocio.
 
-- Problema que resuelve: centraliza la información de servicios, barberos y disponibilidad para facilitar la reserva de citas sin depender de llamadas o tener que ir presencial a la barberia 
-- Público objetivo: clientes de una barbería que desean consultar servicios y reservar su turno, y personal administrativo que necesita gestionar citas y catálogo 
-- Beneficios para el cliente: consulta rápida de servicios y barberos, reserva guiada con validación de teléfono y confirmación del horario
-- Beneficios para el barbero: visualización centralizada de citas, filtro por fecha/barbero, control de estado de cada cita y administración de catálogo de servicios
-- Alcance actual: la pagina implementa la landing page, flujo de reserva, panel administrativo y gestión básica de catálogo, pero la configuración de base de datos y acceso real depende de una instancia de Supabase previamente creada
+### Beneficios
+- Consulta rápida de servicios, precios y tiempos estimados.
+- Visualización de barberos, especialidades y experiencia.
+- Proceso de reserva guiado paso a paso.
+- Validación de teléfonos colombianos y revisión de disponibilidad.
+- Panel administrativo para consultar y cambiar el estado de las reservas.
 
-### Estado funcional observado
+### Alcance actual
+- Funciones implementadas: landing page, catálogo, galería, reserva, autenticación administrativa y gestión de citas.
+- Funciones parcialmente implementadas: gestión de horarios dentro del panel y configuración de base de datos.
+- Funciones pendientes por documentar o validar: script SQL del esquema, usuarios de prueba y políticas reales de Supabase.
 
-- Implementado: landing page, catálogo de servicios, perfiles de barberos, galería, proceso de reserva con validación de celular colombiano, panel de administración, gestión de citas, gestión de barberos y servicios, recuperación de contraseña.
-- Parcialmente implementado: administración de horarios existe en la interfaz, pero la lógica de persistencia y flujo real de horarios depende de la estructura creada en Supabase.
-- Pendiente por confirmar: una base de datos SQL reproducible, un script de inicialización, y usuarios de prueba documentados y accesibles 
+## 2. Funcionalidades implementadas
 
-## C. Funcionalidades implementadas
+Se comprobó que el proyecto cuenta con estas funcionalidades en el código:
 
-La aplicación incluye estas funciones:
+- Página principal con hero, servicios, barberos, galería y CTA de reserva.
+- Flujo de reserva por pasos: servicio, barbero, fecha, hora y confirmación.
+- Validación de número celular colombiano antes de guardar la reserva.
+- Verificación de disponibilidad por barbero, fecha y hora.
+- Recuperación de contraseña para el acceso administrativo.
+- Login del panel con Supabase Auth.
+- Dashboard general con conteo de citas por estado.
+- Listado de reservas con filtros por fecha, barbero y búsqueda por cliente.
+- Cambio de estado de citas (pendiente, atendida, cancelada).
+- Gestión de servicios y barberos desde el perfil administrativo.
+- Diseño responsive para escritorio y móvil.
 
-- Página principal con hero section, navegación, servicios, barberos y galería
-- Sección de reservas con flujo por pasos (servicio, barbero, fecha, hora, confirmación)
-- Validación de número telefónico colombiano en la reserva
-- Verificación de disponibilidad antes de guardar una cita por barbero, fecha y hora
-- Panel administrativo privado con acceso por autenticación de Supabase
-- Dashboard con conteo de citas de hoy, pendientes, atendidas y canceladas
-- Tabla de reservas con filtros por fecha, barbero y búsqueda por cliente
-- Cambio de estado de citas entre pendiente, atendida y cancelada
-- Administración de barberos y servicios desde la vista de perfil/configuración
-- Recuperación y cambio de contraseña para el usuario administrativo
-- Diseño responsive para escritorio y móvil
+### Limitaciones observadas
+- La base de datos no está documentada con un script SQL reproducible dentro del repositorio.
+- La autenticación y persistencia dependen de una instancia real de Supabase.
+- La cuenta administrativa está restringida a una dirección específica configurada en el código.
+- Los horarios de atención se muestran en la interfaz, pero su persistencia real debe validarse con la base de datos configurada.
 
+## 3. Tecnologías utilizadas
 
-### Limitaciones detectadas
+| Tecnología | Versión declarada / comprobada | Función dentro del proyecto |
+|---|---:|---|
+| HTML5 | - | Estructura de las páginas |
+| CSS3 | - | Estilos, layout y diseño responsive |
+| JavaScript ES Modules | - | Lógica de la aplicación y manejo de DOM |
+| Node.js | 20.19+ / 22.12+ (Vite 8) | Entorno de ejecución para desarrollo |
+| npm | - | Instalación de dependencias |
+| Vite | ^8.2.2 | Servidor de desarrollo y build de producción |
+| SweetAlert2 | ^11.26.25 | Alertas y confirmaciones visuales |
+| Supabase Auth | - | Inicio de sesión y recuperación de contraseña |
+| Supabase JavaScript SDK | importado por CDN | Conexión con la base de datos y autenticación |
+| PostgreSQL (Supabase) | gestionado por Supabase | Persistencia de reservas y catálogo |
+| Vercel | - | Despliegue de la aplicación |
 
-- No se incluye un backend propio ni un archivo SQL con el esquema de la base de datos.
-- La configuración del cliente de Supabase está embebida directamente en `src/js/supabase.js` y no utiliza un archivo `.env` del proyecto
-- El acceso administrativo está restringido a una cuenta determinada, no a una lista dinámica de roles
-- La página de perfil incluye la gestión de horarios, pero la persistencia de esos horarios no está documentada en este repositorio como un script reproducible
+Nota: el cliente de Supabase se importa desde CDN en `src/js/supabase.js` y no aparece como dependencia directa en `package.json`.
 
-## D. Tecnologías utilizadas
+## 4. Requisitos previos
 
- Tecnología | Versión declarada / observada | Función dentro del proyecto |
-
- HTML5 - Estructura de páginas publicas y administrativas 
- CSS3  - Estilos visuales, layout y diseño responsive 
- JavaScript ES Modules -  Lógica del frontend y consumo de Supabase 
- Node.js  20.19+  22.12+ (requerido por Vite 8)  Entorno de ejecución para desarrollo 
- npm  -  Gestión de dependencias y scripts 
- Vite  ^8.2.2  Servidor de desarrollo y compilación para producción 
- SweetAlert2  ^11.26.25  Modales y alertas de usuario 
- Supabase Auth  -  Inicio de sesión, logout y recuperación de contraseña 
- Supabase JS SDK - importado por CDN (`jsDelivr`)  Cliente para lectura/escritura a la base de datos 
- PostgreSQL (Supabase) | gestionado por Supabase Persistencia de reservas, servicios, barberos y clientes 
- Vercel  -  Despliegue y hosting estático |
-
-Nota: el repositorio no incluye una dependencia declarada de `@supabase/supabase-js` en `package.json`; se importa desde CDN en `src/js/supabase.js`.
-
-## E. Requisitos previos
-
-- Sistema operativo compatible con Node.js y Vite (Windows, macOS o Linux)
-- Node.js 20.19+ o 22.12+.
+- Sistema operativo compatible con Node.js y Vite (Windows, macOS o Linux).
+- Node.js compatible con Vite 8.
 - npm.
-- Navegador actual
-- Cuenta y proyecto de Supabase configurado
-- Acceso a Vercel o a cualquier hosting compatible si se desea desplegar la versión publicada
+- Navegador web actualizado.
+- Acceso a una instancia de Supabase configurada.
+- Si se desea desplegar, acceso al proyecto de Vercel y a la configuración de la app.
 
-## F. Instalación paso a paso
+## 5. Instalación paso a paso
 
-1. Clonar el repositorio o descargar el código fuente en tu equipo
-2. Abrir la carpeta raíz del proyecto en VS Code o la terminal que prefieras
-3. Instalar dependencias:
+1. Clona el repositorio o descarga el código fuente.
+2. Abre la carpeta raíz del proyecto en una terminal.
+3. Instala las dependencias:
 
 
 npm install
 
 
-4. Verificar la configuración de Supabase en `src/js/supabase.js` y ajustar la URL y la clave si tu proyecto en Supabase es diferente
-5. Crear o conectar la base de datos y la autenticación en Supabase con las tablas que usa la aplicación
-6. Ejecutar en modo desarrollo:
+4. Verifica que la configuración de Supabase en `src/js/supabase.js` coincida con tu proyecto real.
+5. Si es necesario, crea o ajusta la base de datos y las tablas en Supabase.
+6. Ejecuta la aplicación en modo desarrollo:
 
 
 npm run dev
 
 
-7. Abrir la URL mostrada por Vite en la terminal que puede ser 
+7. Abre la URL local indicada por Vite, normalmente:
+
 
 http://localhost:5173/
 
@@ -102,114 +103,163 @@ http://localhost:5173/
 npm run build
 
 
-9. Para revisar la compilación localmente:
+9. Para previsualizar la compilación:
+
 
 npm run preview
 
 
-## G. Variables de entorno
+## 6. Variables de entorno
 
-No hay un archivo `.env` ni variables de entorno configuradas en el repositorio actual
+El proyecto no usa un archivo `.env` en su estado actual. La conexión a Supabase está escrita directamente en `src/js/supabase.js` con la URL y la clave pública del cliente.
 
-La aplicación actualmente usa un cliente de Supabase inicializado directamente en `src/js/supabase.js` con la URL y una clave pública Si se decide migrar a un enfoque más portable, la forma recomendada sería usar variables de entorno con nombres similares a estos:
+Si el equipo decide migrarlo a variables de entorno, la estructura recomendada sería:
+
 
 VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
 VITE_SUPABASE_ANON_KEY=tu-clave-publica
 
 
-## H. Ejecución de la aplicación
+## 7. Ejecución de la aplicación
 
 ### Desarrollo local
 
-npm run dev
 
 - Puerto por defecto: `5173`
 - URL esperada: `http://localhost:5173/`
-- Si el puerto está ocupado, Vite normalmente selecciona otro puerto disponible y lo muestra en la terminal
+- Si el puerto está ocupado, Vite suele asignar otro disponible y lo muestra en la terminal.
 
 ### Producción
+
 
 npm run build
 npm run preview
 
 
-- El resultado se genera en la carpeta `dist/`.
-- La vista previa generalmente usa un puerto local asignado por Vite
+- El resultado final se genera en la carpeta `dist/`.
+- La vista previa debe abrirse con la URL mostrada por Vite.
 
+### Detener la ejecución
+- En la terminal, presiona `Ctrl + C`.
 
-## I. Base de datos y persistencia
+## 8. Base de datos y persistencia
 
-La aplicación no tiene un backend propio en este repositorio. La persistencia real se realiza a través de Supabase desde el navegador, utilizando el cliente JavaScript importado en `src/js/supabase.js`
+La aplicación no cuenta con un backend propio dentro del repositorio. La persistencia real se realiza mediante Supabase desde el navegador.
 
 ### Entidades observadas en el código
 
- Tabla / recurso | Uso observado en el código | Comentario |
+ Tabla / recurso | Uso observado |
 
- `citas`  reserva, consulta, actualización de estado, validación de disponibilidad  es la tabla principal del sistema 
- `barberos`  listado y gestión del catálogo  se consulta en la vista de perfil 
- `servicios`  listado y gestión del catálogo  incluye duración y precio 
- `clientes` asociación de cliente con una reserva  se usa en consultas con relación 
- `auth` (Supabase)  login, logout, recuperación de contraseña  autenticación del panel 
+ `citas` | registro, consulta, disponibilidad y cambio de estado |
+ `barberos` | listado y administración |
+ `servicios` | catálogo y precios |
+ `clientes` | relación de reservas con datos del cliente |
+ `auth` de Supabase | login, logout y recuperación de contraseña |
 
-### Campos que el código espera usar
+### Campos esperados por el código
 
 - `barberos`: `id`, `nombre`, `especialidad`
 - `servicios`: `id`, `nombre`, `duracion`, `precio`
 - `citas`: `id`, `cliente_nombre`, `cliente_telefono`, `servicio`, `barbero`, `fecha`, `hora`, `estado`
-- Relaciones: `citas` se consulta junto con `clientes`, `barberos` y `servicios`
 
-### Nota importante sobre la base de datos
+### Importante
+No existe un script SQL reproducible en el repositorio para crear el schema. Esto significa que el equipo debe configurar la base de datos real en Supabase con las tablas, columnas, relaciones y políticas necesarias para que la aplicación funcione correctamente.
 
-No existe un script SQL reproducible en el repositorio para crear esta estructura la pagina web asume que una instancia de Supabase ya tiene estas tablas con los campos y relaciones necesarias
+## 9. Usuarios y datos de prueba
 
-## J. Usuarios y datos de prueba
+La aplicación no incluye credenciales públicas ni cuentas de prueba documentadas en el repositorio.
 
-El repositorio no incluye un archivo con credenciales de demostración ni usuarios de prueba listos para uso
+### Para la parte administrativa
+- Debe existir una cuenta de Supabase autorizada para el correo configurado en `src/js/admin-auth.js`.
+- Se recomienda usar una cuenta nueva y de prueba, no personal ni real.
+- El acceso se controla por comparación con `ADMIN_EMAIL`.
 
-Lo que sí está implementado es lo siguiente:
+### Para la parte pública
+- Usar datos ficticios en la reserva.
+- Probar con nombres, teléfonos y fechas simuladas.
+- No publicar datos reales de clientes.
 
-- La autenticación del panel está restringida por `ADMIN_EMAIL` en `src/js/admin-auth.js`
-- El login público de clientes no exige cuenta previa; la reserva se hace con datos personales temporales
-- El acceso administrativo requiere que exista una cuenta autenticada en Supabase que coincida con la cuenta autorizada configurada en la aplicación
+## 10. Guía de pruebas funcionales
+
+| ID | Funcionalidad | Pasos | Resultado esperado | Estado |
+|---|---|---|---|---|
+| TC-01 | Consultar servicios | Abrir la página principal | Se muestran servicios con nombre, duración y precio | Pendiente validación manual |
+| TC-02 | Ver barberos | Revisar la sección del equipo | Se visualizan los barberos y sus perfiles | Pendiente validación manual |
+| TC-03 | Reservar cita | Completar formulario con datos ficticios | La reserva se confirma correctamente | Pendiente validación manual |
+| TC-04 | Validar disponibilidad | Reservar el mismo horario dos veces | Se bloquea la segunda reserva | Pendiente validación manual |
+| TC-05 | Validar teléfono | Ingresar un número inválido | Se muestra advertencia | Pendiente validación manual |
+| TC-06 | Iniciar sesión administrativa | Ingresar con cuenta autorizada | Se redirige al dashboard | Pendiente validación manual |
+| TC-07 | Gestionar reservas | Cambiar el estado de una cita | Se refleja en la tabla del panel | Pendiente validación manual |
+| TC-08 | Administrar catálogo | Crear/editar/eliminar barbero o servicio | Los cambios se guardan en Supabase | Pendiente validación manual |
+| TC-09 | Diseño responsive | Probar en móvil y desktop | La interfaz sigue siendo usable | Pendiente validación manual |
+| TC-10 | Compilar proyecto | Ejecutar `npm run build` | La compilación termina sin errores | Verificado |
+
+## 11. Estructura principal del proyecto
+
+```text
+codigo-barber/
+├── index.html
+├── login.html
+├── dashboard.html
+├── reservas.html
+├── perfil.html
+├── reset-password.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── vercel.json
+├── README.md
+├── public/
+│   ├── favicon.svg
+│   └── images/
+├── src/
+│   ├── main.js
+│   ├── style.css
+│   ├── css/
+│   └── js/
+│       ├── admin-auth.js
+│       ├── alerts.js
+│       ├── appointment-status.js
+│       ├── booking.js
+│       ├── dashboard.js
+│       ├── login.js
+│       ├── perfil.js
+│       ├── phone-validation.js
+│       ├── reservas.js
+│       ├── reset-password.js
+│       └── supabase.js
+└── dist/   (generada por build)
 
 
+## 12. Despliegue y publicación
 
-Para pruebas del cliente:
+La versión publicada está en:
 
-- Usar datos ficticios en el formulario de reserva.
-- Probar con nombres y teléfonos ficticios para evitar exponer datos reales
+https://codigo-barber.vercel.app/
 
-## K. Guía de pruebas funcionales
+La aplicación se despliega con Vercel y depende de una instancia configurada de Supabase. El repositorio no incluye credenciales de despliegue ni secretos.
 
-ID | Funcionalidad  Pasos de ejecución  Resultado esperado  Estado 
+## 13. Limitaciones y pendientes conocidos
 
- TC-01 -  Consultar servicios  Abrir la página principal y revisar la sección de servicios | Se visualizan los servicios con nombre, duración y precio  Pendiente validación manual 
- TC-02 - Visualizar barberos  Ir a la sección de barberos  Se muestran los perfiles del equipo con foto, experiencia y especialidad  Pendiente validación manual 
- TC-03 - Crear reserva  Completar paso a paso el formulario y confirmar  La cita queda registrada en Supabase y muestra el resumen final  Pendiente validación manual 
- TC-04 - Validar horario ocupado  Intentar reservar el mismo barbero, fecha y hora dos veces  El sistema bloquea la duplicidad con una alerta Pendiente validación manual 
- TC-05 - Validar teléfono  Ingresar un número inválido  El sistema muestra un mensaje de advertencia  Pendiente validación manual 
- TC-06 - Iniciar sesión admin  Acceder a `/login.html` con una cuenta autorizada  Se redirige al dashboard y se mantiene la sesión  Pendiente validación manual 
- TC-07 - Gestionar reservas  Ir a `/reservas.html` y cambiar el estado de una cita  El cambio se refleja en la tabla y en Supabase  Pendiente validación manual 
- TC-08 - Gestionar catálogo  Abrir `/perfil.html` y crear/editar/eliminar un barbero o servicio  Los cambios se reflejan en la base de datos  Pendiente validación manual 
- TC-09 - Verificar responsive  Probar la aplicación en móvil y escritorio  La navegación y formularios mantienen una experiencia usable  Pendiente validación manual 
- TC-10 - Compilar proyecto  Ejecutar `npm run build`  La compilación termina sin errores  Verificado localmente 
+- Falta un script SQL reproducible para crear el esquema completo de la base de datos.
+- No hay documentación detallada de políticas RLS y relaciones reales de Supabase.
+- No hay usuarios de prueba documentados ni entregados en el repositorio.
+- La cuenta administrativa debe configurarse con cuidado para no exponer información sensible.
+- El calendario/horarios debe verificarse con la estructura real de la base de datos.
 
-## Limitaciones y observaciones
+## 14. Verificación realizada
 
-- El proyecto no incluye un script SQL ni una guía completa de esquema para la base de datos
-- La configuración de Supabase está acoplada al código y requiere ajustes manuales para reutilizar el proyecto en otro entorno
-- No existen cuentas de prueba públicas ni credenciales de administrador documentadas en el repositorio
-- La gestión del panel está protegida por una sola cuenta administrativa, por lo que la configuración del correo autorizado debe hacerse con cuidado
-- El repositorio no incluye un backend/API propio; cualquier persistencia depende de la base de datos y autenticación gestionadas por Supabase.
-
-## Verificación final
-
-Se ejecutó la validación de compilación del proyecto con:
-
+Se ejecutó la validación del proyecto con:
 
 npm run build
 
 
-## Datos para iniciar sesion en acceso personal 
-Correo:menorcuartas@gmail.com
-Contraseña:123456
+
+
+## 15. Repositorio y documentación
+
+- Proyecto: Código Barber
+- URL pública: https://codigo-barber.vercel.app/
+- Repositorio GitHub: pendiente por confirmar con el equipo responsable
+
+E
