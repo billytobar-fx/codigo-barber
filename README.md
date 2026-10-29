@@ -260,6 +260,5 @@ npm run build
 
 - Proyecto: Código Barber
 - URL pública: https://codigo-barber.vercel.app/
-- Repositorio GitHub: pendiente por confirmar con el equipo responsable
+- Repositorio GitHub: https://github.com/billytobar-fx/codigo-barber.git
 
-E
