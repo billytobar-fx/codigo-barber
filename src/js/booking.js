@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
           .from('citas')
           .insert([
             {
-              cliente_nombre: clientName,
-              cliente_telefono: clientPhone,
+              nombre: clientName,
+              telefono: clientPhone,
               servicio: selectedService,
               barbero: selectedBarber,
               fecha: selectedDate,
